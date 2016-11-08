@@ -132,7 +132,8 @@ abstract class Bot
         $this->webSocket->send(json_encode([
             'id' => ++$this->msgID,
             'type' => 'user_typing',
-            'channel' => $channel
+            'channel' => $channel,
+            'user' => $this->rtmdata->self->id
         ]));
     }
 
