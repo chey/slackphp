@@ -123,6 +123,20 @@ abstract class Bot
     }
 
     /**
+     * Let channel know the bot is typing.
+     *
+     * @param string $channel
+     */
+    public function typing($channel)
+    {
+        $this->webSocket->send(json_encode([
+            'id' => ++$this->msgID,
+            'type' => 'user_typing',
+            'channel' => $channel
+        ]));
+    }
+
+    /**
      * @param \Ratchet\RFC6455\Messaging\MessageInterface $msg
      */
     abstract public function handleMessage(\Ratchet\RFC6455\Messaging\MessageInterface $msg);
