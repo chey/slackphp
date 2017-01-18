@@ -1,2 +1,2 @@
 # slackphp
-Base class for very simple Slack bot in PHP.
+Base PHP class for very simple Slack bot using the RTM API.
